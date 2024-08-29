@@ -1,0 +1,24 @@
+name: treinamentoaula
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  job-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a simple script Hello Word!
+        run: echo Hello, world!
+
+  job-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a simple script to check operation system!
+        run: Get-CimInstance Win32_OperatingSystem
