@@ -7,7 +7,9 @@ on:
     branches: [ "main" ]
 
   workflow_dispatch:
-
+  schedule:
+    - cron: "0 0 * * 2-6"  # Executa à meia-noite (UTC) de terça a sábado
+    
 env:
   FILE_NAME: webserver
   
